@@ -1,4 +1,6 @@
-const socket = io();
+const socket = io(https://web-tele-codex.onrender.com/) {
+  transports: ['websocket', 'polling']
+});
 
 const storageKey = `auto-mmo-settings:${location.host}`;
 const el = {
