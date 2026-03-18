@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto MMO Max Pro Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>Auto MMO Max Pro</h1>
+        <p class="subtitle">Socket Bridge Dashboard</p>
+
+        <div class="status-grid">
+          <div><strong>Extension:</strong> <span id="extStatus">Disconnected</span></div>
+          <div><strong>Số dư:</strong> <span id="balance">-</span></div>
+          <div><strong>Hôm nay:</strong> <span id="today">-</span></div>
+          <div><strong>Top:</strong> <span id="rank">-</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Điều khiển</h2>
+        <div class="controls">
+          <button data-cmd="uptolink2">UpToLink 2 Step</button>
+          <button data-cmd="uptolink3">UpToLink 3 Step</button>
+          <button data-cmd="view">View</button>
+          <button data-cmd="top">Top</button>
+          <button data-cmd="spin">Spin</button>
+          <button data-cmd="withdraw">Withdraw</button>
+          <button id="resetBusy">Reset lỗi kẹt Bận</button>
+        </div>
+
+        <div class="form-grid">
+          <label><input type="checkbox" id="autoPP" /> Auto-PPLink</label>
+          <label><input type="checkbox" id="targetOn" /> Target</label>
+          <label>Target <input type="number" id="targetCount" min="1" value="50" /></label>
+          <label>Delay(s) <input type="number" id="delaySec" min="1" value="5" /></label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Thiết bị</h2>
+        <table>
+          <thead>
+            <tr><th>IP</th><th>Quốc gia</th><th>Trạng thái</th></tr>
+          </thead>
+          <tbody id="deviceTable"></tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Logs</h2>
+        <pre id="logs"></pre>
+      </section>
+    </main>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
